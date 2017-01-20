@@ -40,4 +40,4 @@ export const isValidSouthAfricanIDNumber = R.compose(
   normalizeIDNumber
 )
 
-export const normalizeSouthAfricanIDNumber = v => v.replace(/\D/g, '')
+export const normalizeSouthAfricanIDNumber = v => isValidSouthAfricanIDNumber(v) ? v.replace(/\D/g, '') : ''

@@ -10,5 +10,8 @@ describe('South African ID number validation', () => {
 
 describe('South African ID number normalization', () => {
   it('normalizes a valid id number', () => expect(normalizeSouthAfricanIDNumber(' 9307184   \n896 082  ')).toBe('9307184896082'))
+  it('becomes an empty string on invalid id number', () => {
+    expect(normalizeSouthAfricanIDNumber('123')).toBe('')
+  })
 })
 
