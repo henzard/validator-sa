@@ -1,1 +1,3 @@
-export const f = a => a * a
+const f = a => a * a;
+
+export default f;
