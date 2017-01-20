@@ -1,0 +1,33 @@
+{
+  "name": "validator-sa",
+  "version": "0.1.0",
+  "description": "Validation and sanitation for strings, specific to South Africa, compare https://github.com/chriso/validator.js for non-South-Africa specific validation and sanitization",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "build": "webpack -p"
+  },
+  "keywords": [
+    "validation",
+    "validator",
+    "strings",
+    "South Africa"
+  ],
+  "author": "Chris Oloff <chris@uber5.com> (http://about.uber5.com/)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "6.22.2",
+    "babel-loader": "6.2.10",
+    "babel-preset-es2015": "6.22.0",
+    "babel-preset-stage-2": "6.22.0",
+    "jest": "18.1.0",
+    "webpack": "1.14.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
+  }
+}
