@@ -8,7 +8,7 @@ let plugins = [
     REVISION: JSON.stringify(execSync('git rev-parse --short HEAD').toString().trim()),
     BUILT_AT: JSON.stringify(new Date().getTime()),
     BUILT_ON: JSON.stringify(execSync('hostname').toString().trim()),
-    'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development'),
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
   }),
 ]
 
