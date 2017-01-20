@@ -1,3 +1,3 @@
 const f = a => a * a;
 
-export default f;
+module.exports = f;

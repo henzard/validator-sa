@@ -12,12 +12,14 @@ let plugins = [
   }),
 ]
 
+const filename = pkg.name + (process.env.WEBPACK_ENV === 'production' ? '-min.js' : '.js')
+
 module.exports = [
   {
     entry: './src/index.js',
     output: {
       path: './lib',
-      filename: pkg.name + '.js',
+      filename: filename,
       library: pkg.name,
       libraryTarget: 'umd',
       umdNamedDefine: true
