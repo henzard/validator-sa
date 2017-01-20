@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "npm test -- --watch",
+    "test:coverage": "jest --config ./jest-coverage-config.json",
     "clean": "rimraf lib",
     "build": "npm run build:std && npm run build:min",
     "build:std": "webpack",
