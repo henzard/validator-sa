@@ -2,7 +2,7 @@
   "name": "validator-sa",
   "version": "0.1.1",
   "description": "Validation and sanitation for strings, specific to South Africa, compare https://github.com/chriso/validator.js for non-South-Africa specific validation and sanitization",
-  "main": "index.js",
+  "main": "lib/validator-sa.js",
   "scripts": {
     "test": "jest",
     "test:watch": "npm test -- --watch",
@@ -35,6 +35,7 @@
     "eslint-loader": "1.6.1",
     "eslint-plugin-import": "2.2.0",
     "jest": "18.1.0",
+    "jsdoc": "3.4.3",
     "rimraf": "2.5.4",
     "webpack": "1.14.0"
   },

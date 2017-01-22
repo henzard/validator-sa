@@ -31,6 +31,16 @@ export const lastDigitIsValidCheckDigit = R.pipe(
   ([ init, last ]) => last == checkDigit(init)
 )
 
+/**
+ * Validates if the string given is an ID number.
+ *
+ * ## Testing
+ *
+ * If you need a fake ID number for testing, use
+ * [this](https://chris927.github.io/generate-sa-idnumbers/).
+ *
+ * @param {string} idnumber - The idnumber to validate.
+ */
 export const isValidSouthAfricanIDNumber = R.compose(
   R.allPass([
     startsWithIDNumberBirthdate,
@@ -40,4 +50,10 @@ export const isValidSouthAfricanIDNumber = R.compose(
   normalizeIDNumber
 )
 
+/**
+ * Normalizes a string representing an ID number.
+ *
+ * TODO: currently, if the ID number is invalid, it normalizes it to an empty
+ * string, not sure this is a good idea.
+ */
 export const normalizeSouthAfricanIDNumber = v => isValidSouthAfricanIDNumber(v) ? v.replace(/\D/g, '') : ''
