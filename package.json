@@ -12,7 +12,7 @@
     "build:std": "webpack",
     "build:min": "WEBPACK_ENV=production webpack -p",
     "doc": "jsdoc2md -c ./jsdoc.conf --files 'src/*.js' > api.md",
-    "prepublish": "npm run clean && npm run build && npm test && npm doc"
+    "prepublish": "npm run clean && npm run build && npm test"
   },
   "keywords": [
     "validation",
