@@ -31,5 +31,5 @@ If you want to use it directly in the browser, use the respective file
 
 # API
 
-There should be generated documentation shortly...
+There should be generated documentation shortly... [here](./api.md)
 

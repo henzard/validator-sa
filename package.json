@@ -11,7 +11,8 @@
     "build": "npm run build:std && npm run build:min",
     "build:std": "webpack",
     "build:min": "WEBPACK_ENV=production webpack -p",
-    "prepublish": "npm run clean && npm run build && npm test"
+    "doc": "jsdoc2md -c ./jsdoc.conf --files 'src/*.js' > api.md",
+    "prepublish": "npm run clean && npm run build && npm test && npm doc"
   },
   "keywords": [
     "validation",
@@ -36,6 +37,7 @@
     "eslint-plugin-import": "2.2.0",
     "jest": "18.1.0",
     "jsdoc": "3.4.3",
+    "jsdoc-to-markdown": "2.0.1",
     "rimraf": "2.5.4",
     "webpack": "1.14.0"
   },
