@@ -11,7 +11,7 @@
     "build": "npm run build:std && npm run build:min",
     "build:std": "webpack",
     "build:min": "WEBPACK_ENV=production webpack -p",
-    "prepublish": "npm run clean && npm run build"
+    "prepublish": "npm run clean && npm run build && npm test"
   },
   "keywords": [
     "validation",
