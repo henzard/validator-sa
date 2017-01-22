@@ -3,8 +3,4 @@ import {
   normalizeSouthAfricanIDNumber
 } from './idnumber'
 
-module.exports = {
-  isValidSouthAfricanIDNumber,
-  lastDigitIsValidCheckDigit,
-  normalizeSouthAfricanIDNumber
-}
+export { isValidSouthAfricanIDNumber, lastDigitIsValidCheckDigit, normalizeSouthAfricanIDNumber }
