@@ -10,6 +10,8 @@
 <dd><p>Normalizes a string representing an ID number.</p>
 <p>TODO: currently, if the ID number is invalid, it normalizes it to an empty
 string, not sure this is a good idea.</p></dd>
+<dt><a href="#getValidationErrors">getValidationErrors</a></dt>
+<dd><p>For a given value, determines a list of validation errors.</p></dd>
 </dl>
 
 <a name="isValidSouthAfricanIDNumber"></a>
@@ -34,3 +36,14 @@ string, not sure this is a good idea.</p></dd>
 string, not sure this is a good idea.</p>
 
 **Kind**: global constant  
+<a name="getValidationErrors"></a>
+
+## getValidationErrors
+<p>For a given value, determines a list of validation errors.</p>
+
+**Kind**: global constant  
+
+| Param | Type |
+| --- | --- |
+| value | <code>String</code> | 
+

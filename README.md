@@ -3,6 +3,10 @@
 Implements validation and normalization of strings, for South African ID
 numbers. Maybe in future other validation that is specific to South Africa.
 
+[Here](https://codesandbox.io/s/react-codesandbox-w4o49) is a usage
+example inside a [React](https://reactjs.org/) component. You can test
+and validate ID numbers there, with error feedback.
+
 # How to Use
 
 Install it via `npm`:
