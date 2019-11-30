@@ -29,3 +29,5 @@ var isValid = validator.isValidSouthAfricanIDNumber('123')
 # API
 
 Documentation is [here](./api.md).
+
+TODO: Not all functions are documented.

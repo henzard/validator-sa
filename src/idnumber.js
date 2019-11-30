@@ -36,6 +36,15 @@ const isValidCitizenOrResident = R.pipe(
   R.gt(2)
 )
 
+const validatorsAndErrorMessages = [
+  [
+    startsWithIDNumberBirthdate, 'Not a valid date of birth'
+  ],
+  [ lastDigitIsValidCheckDigit, 'Check digit does not match'],
+  [ has13Characters, 'Does not have 13 characters'],
+  [ isValidCitizenOrResident, 'Is neither citizen nor resident']
+]
+
 /**
  * Validates if the string given is an ID number.
  *
@@ -47,12 +56,7 @@ const isValidCitizenOrResident = R.pipe(
  * @param {string} idnumber - The idnumber to validate.
  */
 export const isValidSouthAfricanIDNumber = R.compose(
-  R.allPass([
-    startsWithIDNumberBirthdate,
-    lastDigitIsValidCheckDigit,
-    has13Characters,
-    isValidCitizenOrResident,
-  ]),
+  R.allPass(validatorsAndErrorMessages.map(([v]) => v)), // take the validator, ignore the message
   normalizeIDNumber
 )
 
@@ -63,3 +67,22 @@ export const isValidSouthAfricanIDNumber = R.compose(
  * string, not sure this is a good idea.
  */
 export const normalizeSouthAfricanIDNumber = v => isValidSouthAfricanIDNumber(v) ? v.replace(/\D/g, '') : ''
+
+/**
+ * For a given value, determines a list of validation errors.
+ * 
+ * @param {String} value
+ */
+export const getValidationErrors = v => {
+  if (!v) {
+    return [ 'No value given' ]
+  }
+  const errors = []
+  const normalized = normalizeIDNumber(v)
+  for (const [validator, message] of validatorsAndErrorMessages) {
+    if (!validator(normalized)) {
+      errors.push(message)
+    }
+  }
+  return errors
+}
