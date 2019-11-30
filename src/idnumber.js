@@ -28,7 +28,12 @@ const startsWithIDNumberBirthdate = R.allPass([
 
 export const lastDigitIsValidCheckDigit = R.pipe(
   R.splitAt(-1),
-  ([ init, last ]) => last == checkDigit(init)
+  ([ init, last ]) => Number(last) === checkDigit(init)
+)
+
+const isValidCitizenOrResident = R.pipe(
+  substrAsNumber(10, 1),
+  R.gt(2)
 )
 
 /**
@@ -46,6 +51,7 @@ export const isValidSouthAfricanIDNumber = R.compose(
     startsWithIDNumberBirthdate,
     lastDigitIsValidCheckDigit,
     has13Characters,
+    isValidCitizenOrResident,
   ]),
   normalizeIDNumber
 )

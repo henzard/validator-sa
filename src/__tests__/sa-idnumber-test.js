@@ -6,6 +6,17 @@ describe('South African ID number validation', () => {
 
   it('validates an invalid one as invalid', () => expect(isValidSouthAfricanIDNumber('9307184896083')).toBe(false))
 
+  it('marks a valid but non-normalized ID number as valid', () =>
+    expect(isValidSouthAfricanIDNumber('9307184 896082')).toBe(true)
+  )
+
+  it('marks an ID number with invalid citizen/resident digit as invalid', () => {
+    const idnoResident = '9307184896181'
+    const idnoNeitherResidentNorCitizen = '9307184896280'
+    expect(isValidSouthAfricanIDNumber(idnoResident)).toBe(true)
+    expect(isValidSouthAfricanIDNumber(idnoNeitherResidentNorCitizen)).toBe(false)
+  })
+
 })
 
 describe('South African ID number normalization', () => {
@@ -14,4 +25,3 @@ describe('South African ID number normalization', () => {
     expect(normalizeSouthAfricanIDNumber('123')).toBe('')
   })
 })
-
