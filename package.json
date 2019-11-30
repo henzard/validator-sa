@@ -1,6 +1,6 @@
 {
   "name": "validator-sa",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Validation and sanitation for strings, specific to South Africa, compare https://github.com/chriso/validator.js for non-South-Africa specific validation and sanitization",
   "main": "dist",
   "scripts": {
