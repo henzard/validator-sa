@@ -8,7 +8,7 @@
     "test:watch": "npm test -- --watch",
     "test:coverage": "jest --coverage",
     "clean": "rimraf lib coverage",
-    "precommit": "lint-staged",
+    "precommit": "lint-staged && npm run doc",
     "build": "babel src --out-dir dist --source-maps",
     "doc": "jsdoc2md -c ./jsdoc.conf --files 'src/*.js' > api.md",
     "prepublish": "npm run clean && npm run build && npm test"
