@@ -19,6 +19,12 @@ describe('South African ID number validation', () => {
     expect(isValidSouthAfricanIDNumber(idnoNeitherResidentNorCitizen)).toBe(false)
   })
 
+  it('ensures the 12th digit is 8', () => {
+    const idnoCitizen = '9307184896082'
+    const idnoInvalid12thDigit = '9307184896074'
+    expect(isValidSouthAfricanIDNumber(idnoCitizen)).toBe(true)
+    expect(isValidSouthAfricanIDNumber(idnoInvalid12thDigit)).toBe(false)
+  })
 })
 
 describe('South African ID number normalization', () => {
@@ -32,12 +38,14 @@ describe('validation errors', () => {
   it('provides a list of validation errors', () => {
     expect(getValidationErrors('123')).toStrictEqual([
       'Check digit does not match',
-      'Does not have 13 characters'
+      'Does not have 13 characters',
+      'The 12th digit is required to be 8'
     ])
     expect(getValidationErrors('9922019999999')).toStrictEqual([
       'Not a valid date of birth',
       'Check digit does not match',
-      'Is neither citizen nor resident'
+      'Is neither citizen nor resident',
+      'The 12th digit is required to be 8'
     ])
   })
   it('provides an empty list, if idnumber is valid', () => {
